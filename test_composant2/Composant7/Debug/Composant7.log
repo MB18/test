@@ -1,5 +1,5 @@
-﻿La génération a démarré 17/05/2015 15:05:35.
-     1>Projet "E:\MAXIME\cours\COMPOSANTS\test_composant2\Composant7\Composant7.vcxproj" sur le nœud 3 (rebuild cible(s)).
+﻿La génération a démarré 17/05/2015 18:28:13.
+     1>Projet "E:\MAXIME\cours\COMPOSANTS\test_composant2\Composant7\Composant7.vcxproj" sur le nœud 2 (rebuild cible(s)).
      1>_PrepareForClean:
          Suppression du fichier "Debug\Composant7.lastbuildstate".
        InitializeBuildStatus:
@@ -29,4 +29,4 @@
 
 La génération a réussi.
 
-Temps écoulé 00:00:00.66
+Temps écoulé 00:00:00.61

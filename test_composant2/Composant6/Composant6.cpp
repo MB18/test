@@ -3,7 +3,7 @@
 
 
 
-vector<double> getChemin(double spot, int maturite)
+vector<double> getChemin(int maturite, double spot)
 {
 	vector<double> valeurs;
 	for (int i = 0 ; i < maturite ; i++)

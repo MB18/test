@@ -1,12 +1,15 @@
-﻿La génération a démarré 17/05/2015 15:51:24.
+﻿La génération a démarré 17/05/2015 18:28:41.
      1>Projet "E:\MAXIME\cours\COMPOSANTS\test_composant2\Composant2\Composant2.vcxproj" sur le nœud 2 (rebuild cible(s)).
      1>_PrepareForClean:
          Suppression du fichier "Debug\Composant2.lastbuildstate".
        InitializeBuildStatus:
-         Création de "Debug\Composant2.unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
+         Mise à jour de l'horodatage "Debug\Composant2.unsuccessfulbuild".
        ClCompile:
          E:\LOGICIELS\Visual studio\VC\bin\CL.exe /c /IE:\MAXIME\cours\COMPOSANTS\test_composant2\Interfaces /ZI /nologo /W3 /WX- /Od /Oy- /D COMPOSANT2_EXPORTS /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D _WINDLL /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Composant2.cpp
          Composant2.cpp
+     1>e:\maxime\cours\composants\test_composant2\composant2\composant2.cpp(39): warning C4244: 'argument' : conversion de 'double' en 'unsigned int', perte possible de données
+     1>e:\maxime\cours\composants\test_composant2\composant2\composant2.cpp(71): warning C4244: 'argument' : conversion de 'double' en 'unsigned int', perte possible de données
+     1>e:\maxime\cours\composants\test_composant2\composant2\composant2.cpp(72): warning C4244: 'argument' : conversion de 'double' en 'int', perte possible de données
        ManifestResourceCompile:
          C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\Composant2.dll.embed.manifest.res" Debug\Composant2_manifest.rc 
        Link:
@@ -29,4 +32,4 @@
 
 La génération a réussi.
 
-Temps écoulé 00:00:00.72
+Temps écoulé 00:00:00.68

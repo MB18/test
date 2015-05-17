@@ -18,7 +18,7 @@ using std::transform;
 const int T = 504;
 const int NB =  10;
 
-bool testGetPath(string exception, const string expectedExceptions[], const double* returnedArray)
+bool testGetPath(string exception, const string expectedExceptions[], vector<double> returnedArray)
 {
 	bool correctBehaviour = true;
 	int i=0;
@@ -29,7 +29,7 @@ bool testGetPath(string exception, const string expectedExceptions[], const doub
 			bool wrongType = false;
 			do
 			{	
-				wrongType = ( typeid(returnedArray[i++]).name() != "double"); 
+				wrongType = ( typeid(returnedArray.at(i++)).name() != "double"); 
 			}
 			while (i < T && !wrongType) ;
 			correctBehaviour = wrongType;
@@ -42,7 +42,7 @@ bool testGetPath(string exception, const string expectedExceptions[], const doub
 			bool negativeValue = false;
 			do
 			{	
-				negativeValue = ( returnedArray[i++] < 0 );
+				negativeValue = ( returnedArray.at(i++) < 0 );
 			}
 			while (i < T && !negativeValue) ;
 			correctBehaviour = negativeValue;
@@ -54,13 +54,7 @@ bool testGetPath(string exception, const string expectedExceptions[], const doub
 		{
 			bool missedValue = false;
 			i= 0;
-			do
-			{
-				missedValue = returnedArray[i] == NULL || returnedArray[i] ==0;
-				i++;
-			}
-			while(i < T && !missedValue);
-			correctBehaviour = missedValue;
+			correctBehaviour = returnedArray.size() < T;
 			if(correctBehaviour)
 				cout<<"GET PATH TESTS OK"<<endl<<endl<<endl;
 			else
@@ -73,20 +67,18 @@ bool testGetPath(string exception, const string expectedExceptions[], const doub
 	{
 		do
 		{
-			
-			string type =  typeid(returnedArray[i++]).name();
+			string type =  typeid(returnedArray.at(i)).name();
 			type = type.substr(0,6);
-			int nb = (int) returnedArray[i];
-			correctBehaviour = ( returnedArray[i] != NULL || nb !=0 ) && nb >= 0 && type == "double";
+			correctBehaviour =  returnedArray.size() >= T  && returnedArray.at(i) >= 0 && type == "double";
 			if(!correctBehaviour)
 			{
 				cout<<type<<endl;
 				if (type !="double") 
 					cout<<"FAILED : WRONG TYPE OF DATA EXCEPTION UNTRINGGERED. Type is : "<<type<<endl;
-				else if (returnedArray[i] ==NULL && nb !=0)
-					cout<<"FAILED : MISSING DATA EXCEPTION UNTRIGGERED : "<<i<<endl;
-				else //if(returnedArray[i] <0 )
-					cout<<"FAILED : NEGATIVE VALUE EXCEPTION UNTRIGGERED : value in the array is "<< nb <<endl;
+				else if (returnedArray.size() < T )
+					cout<<"FAILED : MISSING DATA EXCEPTION UNTRIGGERED. Size is : "<<returnedArray.size()<<endl;
+				else //if(returnedArray.at(i) <0 )
+					cout<<"FAILED : NEGATIVE VALUE EXCEPTION UNTRIGGERED : value in the array is "<< returnedArray.at(0) <<endl;
 				
 			}
 			i++;
@@ -116,7 +108,7 @@ int _tmain(int argc, char* argv[])
 	
 	
 	Composant2 *composant = new Composant2();
-	double *returnedArray=NULL;
+	vector<double>returnedArray;
 	int i = -1;
 	
 	//1 test the getPath Function
@@ -124,7 +116,7 @@ int _tmain(int argc, char* argv[])
 	system("pause");
 	try
 	{
-		returnedArray = composant->getPath();
+		returnedArray = composant->getPath(100,T);
 	}
 	catch (string s)
 	{
@@ -239,9 +231,9 @@ int _tmain(int argc, char* argv[])
 	pricePathErrors[1] = "NEGATIVE VALUE";
 	pricePathErrors[2] = "MISSED DATA";
 	pricePathErrors[3] = "VALUE GRATER THAN 1 000 000";
-	double *path = new double[T];
+	vector <double>path;
 	for (i = 0 ; i < T ; i++)
-			path[i] = 0.5;
+			path.push_back(0.5);
 	
 	do
 	{
@@ -260,8 +252,8 @@ int _tmain(int argc, char* argv[])
 		i++;
 	}
 	while (correctBehaviour && i < 2);
-	path[T/2] = NULL;
-	path[T+50]=NULL;
+	path.pop_back();
+	path.pop_back();
 	try
 	{
 		composant->pricePath(payOff[i],path,strike[i],maturity[i]);
@@ -274,8 +266,8 @@ int _tmain(int argc, char* argv[])
 			cout<<"FAILED : MISSING DATA EXCEPTION UNTRIGGERERD"<<endl;
 	}
 	i = 3;
-	path[T-2] = 1000001;
-	path[T+50] = 100;
+	path.push_back(1000001);
+	path.push_back(100);
 	try
 	{
 		composant->pricePath(payOff[i],path,strike[i],maturity[i]);

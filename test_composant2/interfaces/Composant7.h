@@ -9,8 +9,8 @@
 #endif
 
 #include <string>
+#include <vector>
 using std::string;
-
-COMPOSANT7_INTERFACE double pricePath2( string typePayOff, double path[], double strike, double maturity);
+COMPOSANT7_INTERFACE double pricePath2( string typePayOff, double* path, double strike, double maturity);
 #endif
 

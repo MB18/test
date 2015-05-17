@@ -1,11 +1,10 @@
-﻿La génération a démarré 17/05/2015 15:59:35.
+﻿La génération a démarré 17/05/2015 18:28:48.
      1>Projet "E:\MAXIME\cours\COMPOSANTS\test_composant2\ProgTest\ProgTest.vcxproj" sur le nœud 2 (build cible(s)).
      1>InitializeBuildStatus:
-         Création de "Debug\ProgTest.unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
+         Mise à jour de l'horodatage "Debug\ProgTest.unsuccessfulbuild".
        ClCompile:
          Toutes les sorties sont à jour.
-         E:\LOGICIELS\Visual studio\VC\bin\CL.exe /c /IE:\MAXIME\cours\COMPOSANTS\test_composant2\Interfaces /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\ProgTest.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ProgTest.cpp
-         ProgTest.cpp
+         Toutes les sorties sont à jour.
        ManifestResourceCompile:
          Toutes les sorties sont à jour.
        Link:
@@ -25,4 +24,4 @@
 
 La génération a réussi.
 
-Temps écoulé 00:00:00.49
+Temps écoulé 00:00:00.17

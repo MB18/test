@@ -1,6 +1,6 @@
 #include "Composant7.h"
 
-double pricePath2( string typePayOff, double path[], double strike, double maturity)
+double pricePath2( string typePayOff, double *path, double strike, double maturity)
 {
 	double value=-10;
 	if (typePayOff == "CALL")
