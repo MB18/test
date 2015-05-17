@@ -3,9 +3,9 @@
 
 
 
-std::vector<double> getChemin(double spot, int maturite)
+vector<double> getChemin(double spot, int maturite)
 {
-	std::vector<double> valeurs(maturite);
+	vector<double> valeurs;
 	for (int i = 0 ; i < maturite ; i++)
 	{
 		if (i%2 ==0)	

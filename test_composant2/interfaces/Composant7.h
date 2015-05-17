@@ -11,6 +11,6 @@
 #include <string>
 using std::string;
 
-COMPOSANT7_INTERFACE double pricePath( string typePayOff, double path[], double strike, double maturity);
+COMPOSANT7_INTERFACE double pricePath2( string typePayOff, double path[], double strike, double maturity);
 #endif
 

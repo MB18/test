@@ -9,10 +9,13 @@
 #endif
 
 #include<vector>
-
+#include <iostream>
+using std::vector;
+using std::cout;
+using std::endl;
 // interface du composant1
 
 //COMPOSANT1_INTERFACE char * getComposant1Version(void);
-COMPOSANT6_INTERFACE std::vector<double> getChemin( double spot, int maturite);
+COMPOSANT6_INTERFACE vector<double> getChemin( double spot, int maturite);
 #endif
 
